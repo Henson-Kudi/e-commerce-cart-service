@@ -1,0 +1,14 @@
+{
+  "cartItemUpdated": "cart-item-updated",
+  "cartCleared": "cart-cleared",
+  "cartItemRemoved": "cart-item-removed",
+  "cartItemsRemoved": "cart-items-removed",
+  "cartItemAdded": "cart-item-added",
+
+  "wishlistItemUpdated": "wishlist-item-updated",
+  "wishlistItemsUpdated": "wishlist-items-updated",
+  "wishlistCleared": "wishlist-cleared",
+  "wishlistItemRemoved": "wishlist-item-removed",
+  "wishlistItemsRemoved": "wishlist-items-removed",
+  "wishlistItemAdded": "wishlist-item-added"
+}
