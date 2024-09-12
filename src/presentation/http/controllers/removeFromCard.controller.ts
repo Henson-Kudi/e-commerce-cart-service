@@ -12,7 +12,7 @@ export default class RemoveFromCartController
   handle(
     request: RequestObject
   ): Promise<ReturnType<{ count: number } | null>> {
-    const authUserId = request.headers?.user_id;
+    const authUserId = request.headers?.userId;
 
     if (!authUserId) {
       const error = new AppError('Not authorised', ResponseCodes.BadRequest);

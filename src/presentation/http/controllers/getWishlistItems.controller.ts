@@ -16,7 +16,7 @@ export default class GetWishlistItemsController
   handle(
     request: RequestObject
   ): Promise<ReturnTypeWithPagination<WishlistItem[]>> {
-    const authUserId = request.headers?.user_id;
+    const authUserId = request.headers?.userId;
 
     if (!authUserId) {
       const error = new AppError('Not authorised', ResponseCodes.BadRequest);

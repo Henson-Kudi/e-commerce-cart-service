@@ -2,7 +2,7 @@
   "name": "clean-architecture-prisma",
   "version": "1.0.0",
   "description": "Clean code architecture with prisma",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo Error: No test scripts added",
     "start": "node dist/index.js",
@@ -15,6 +15,7 @@
     "prepare": "npm.cmd run compile",
     "pretest": "npm.cmd run compile",
     "posttest": "npm.cmd run lint",
+    "prisma:generate": "npx prisma generate",
     "migrate": "npx prisma migrate dev --name init"
   },
   "keywords": [

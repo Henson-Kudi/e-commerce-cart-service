@@ -11,7 +11,7 @@ export default class AddToCartController
 {
   constructor(private readonly serviceManager: ServiceManager) {}
   handle(request: RequestObject): Promise<ReturnType<CartItem | null>> {
-    const authUserId = request.headers?.user_id;
+    const authUserId = request.headers?.userId;
 
     if (!authUserId) {
       const error = new AppError('Not authorised', ResponseCodes.BadRequest);
