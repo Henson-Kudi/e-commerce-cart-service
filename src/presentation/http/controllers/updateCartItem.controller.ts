@@ -7,11 +7,10 @@ import { ResponseCodes } from '../../../domain/enums/responseCode';
 import { ServiceManager } from '../../../application/services';
 
 export class UpdateCartItemController
-  implements IContoller<ReturnType<CartItem | null>>
-{
-  constructor(private readonly serviceManager: ServiceManager) {}
+  implements IContoller<ReturnType<CartItem | null>> {
+  constructor(private readonly serviceManager: ServiceManager) { }
   handle(request: RequestObject): Promise<ReturnType<CartItem | null>> {
-    const authUserId = request.headers?.userId;
+    const authUserId = request.headers ? request.headers['user-id'] : '';
 
     if (!authUserId) {
       const error = new AppError('Not authorised', ResponseCodes.BadRequest);

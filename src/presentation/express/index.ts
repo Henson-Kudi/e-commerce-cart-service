@@ -1,13 +1,11 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import morgan from 'morgan';
 import { Server } from 'http';
 import router from './routes';
 import errorRequestHandler from './middlewares/errorHandler';
 import envConf from '../../env.conf';
 import logger from '../../utils/logger';
-import { randomUUID } from 'crypto';
 import AppError from '../../domain/valueObjects/error';
 import { ResponseCodes } from '../../domain/enums/responseCode';
 
@@ -23,7 +21,10 @@ app.use(
 
 app.use(express.json());
 
-app.use(morgan('dev')); // morgan for api route logging
+if (envConf.NODE_ENV !== 'production') {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  app.use(require('morgan')('dev')); // morgan for api route logging
+}
 
 const baseUrl = '/api/v1/cart-service'; // change as you like
 

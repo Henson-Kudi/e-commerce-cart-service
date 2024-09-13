@@ -6,13 +6,12 @@ import { ResponseCodes } from '../../../domain/enums/responseCode';
 import { ServiceManager } from '../../../application/services';
 
 export default class RemoveFromCartController
-  implements IContoller<ReturnType<{ count: number } | null>>
-{
-  constructor(private readonly serviceManager: ServiceManager) {}
+  implements IContoller<ReturnType<{ count: number } | null>> {
+  constructor(private readonly serviceManager: ServiceManager) { }
   handle(
     request: RequestObject
   ): Promise<ReturnType<{ count: number } | null>> {
-    const authUserId = request.headers?.userId;
+    const authUserId = request.headers ? request.headers['user-id'] : '';
 
     if (!authUserId) {
       const error = new AppError('Not authorised', ResponseCodes.BadRequest);

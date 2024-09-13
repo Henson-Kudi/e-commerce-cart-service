@@ -1,7 +1,7 @@
 {
-  "name": "clean-architecture-prisma",
+  "name": "cart-service",
   "version": "1.0.0",
-  "description": "Clean code architecture with prisma",
+  "description": "Cart management for e-commerce application",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo Error: No test scripts added",
