@@ -8,6 +8,7 @@ import envConf from '../../env.conf';
 import logger from '../../utils/logger';
 import AppError from '../../domain/valueObjects/error';
 import { ResponseCodes } from '../../domain/enums/responseCode';
+import { NODE_ENV } from '../../domain/enums/utils';
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.use(
 
 app.use(express.json());
 
-if (envConf.NODE_ENV !== 'production') {
+if (envConf.NODE_ENV !== NODE_ENV.PRODUCTION) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   app.use(require('morgan')('dev')); // morgan for api route logging
 }
